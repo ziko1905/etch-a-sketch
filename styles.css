@@ -4,14 +4,12 @@ body {
 
 .whiteboard {
     background-color: whitesmoke;
-    width: 70%;
-    height: 500px;
     border-radius: 10px;
 }
 
 #board-div {
     text-align: center;
-}
+}   
 
 h1 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
