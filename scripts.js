@@ -1,20 +1,45 @@
 const grid = document.querySelector(".grid");
-const SIZE = 16;
+const button = document.querySelector(".change-btn");
+let size = 16;
 
+button.addEventListener("mousedown", () => {
+    button.setAttribute("class", "change-btn-down")
+})
 
+button.addEventListener("mouseup", () => {
+    button.setAttribute("class", "change-btn")
+})
 
-for (let i = 0; i < SIZE; i++) {
-    const row = document.createElement("div");
-    row.setAttribute("class", "row");
-    for (let j = 0; j < SIZE; j++) {
-        const field = document.createElement("div");
-        field.setAttribute("class", "field");
-        row.appendChild(field);
-        field.addEventListener("mouseover", (e) => {
-            console.log('hower')
-            e.target.style.backgroundColor = "black"
-        })
+button.onclick = newBoard
+
+function newBoard() {
+    let newVal = prompt("Please enter a whole number less than 100!")
+    console.log(Number(newVal))
+    if (isNaN(Number(newVal)) || Number(newVal) > 100) newBoard()
+    else {
+        size = Math.floor(Math.abs(Number(newVal)))
+        createBoard()
     }
-    grid.appendChild(row);
-
 }
+
+
+function createBoard () {
+    grid.textContent = ""
+    for (let i = 0; i < size; i++) {
+        const row = document.createElement("div");
+        row.setAttribute("class", "row");
+        for (let j = 0; j < size; j++) {
+            const field = document.createElement("div");
+            field.setAttribute("class", "field");
+            field.style.backgroundColor = `rgb(${Math.random()*256}, ${Math.random()*256}, ${Math.random()*256})`
+            row.appendChild(field);
+            field.addEventListener("mouseover", (e) => {
+                e.target.style.opacity = e.target.style.opacity + 0.1
+            })
+        }
+        grid.appendChild(row);
+
+    }
+}
+
+createBoard()

@@ -20,15 +20,16 @@ h1 {
 }
 
 .grid {
+    background-color: wheat;
     display: flex;
-    height: 800px;
-    width: 800px;
+    height: 650px;
+    width:650px;
     margin: 0px auto;
     flex-direction: column;
 }
 
 .field {
-    background-color: aliceblue;
+    opacity: 0;
     flex: auto;
     
 }
@@ -39,7 +40,31 @@ h1 {
     flex: auto;
 }
 
-.change {
-    margin: 5px auto;
-    text-align: center;
+.change-btn {
+    background-color: brown;
+    font-size: 28px;
+    font-family: "Roboto";
+    font-weight: 700;
+    padding: 10px;
+    border-radius: 10px;
+    border-style: dashed;
+    border: 5px salmon seagreen;
+}
+
+.change-btn-down {
+    background-color: rgb(83, 21, 21);
+    color: whitesmoke;
+    font-size: 28px;
+    font-family: "Roboto";
+    font-weight: 700;
+    padding: 10px;
+    border-radius: 10px;
+    border-style: dashed;
+    border: 5px salmon seagreen;
+}
+
+.button-div {
+    margin: 20px auto 40px auto;
+    display: flex;
+    justify-content: center;
 }
