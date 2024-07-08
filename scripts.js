@@ -31,12 +31,17 @@ function createBoard () {
         for (let j = 0; j < size; j++) {
             const field = document.createElement("div");
             field.setAttribute("class", "field");
-            field.style.backgroundColor = `rgb(${Math.random()*256}, ${Math.random()*256}, ${Math.random()*256})`
+            field.style.backgroundColor = "white"
             row.appendChild(field);
             field.addEventListener("mouseover", (e) => {
-                if (!e.target.style.opacity) tmp = 1
-                else tmp = Number(e.target.style.opacity)
-                e.target.style.opacity = tmp - 0.1
+                if (field.style.backgroundColor == "white") {
+                    field.style.backgroundColor = `rgb(${Math.random()*256}, ${Math.random()*256}, ${Math.random()*256})`
+                }
+                else {
+                    if (!e.target.style.opacity) tmp = 1
+                    else tmp = Number(e.target.style.opacity)
+                    e.target.style.opacity = tmp - 0.1
+                }
             })
         }
         grid.appendChild(row);
