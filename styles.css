@@ -2,25 +2,8 @@ body {
     background-color: rgb(255, 79, 48);
 }
 
-.whiteboard {
-    background-color: whitesmoke;
-    border-radius: 10px;
-}
-
-#board-div {
-    text-align: center;
-}   
-
-h1 {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 38px;
-    color: wheat;
-    text-align: center;
-    margin: 44px auto;
-}
-
 .grid {
-    background-color: wheat;
+    background-color: black;
     display: flex;
     height: 650px;
     width:650px;
@@ -29,9 +12,8 @@ h1 {
 }
 
 .field {
-    opacity: 0;
+    opacity: 1;
     flex: auto;
-    
 }
 
 .row {

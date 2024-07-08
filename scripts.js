@@ -34,7 +34,9 @@ function createBoard () {
             field.style.backgroundColor = `rgb(${Math.random()*256}, ${Math.random()*256}, ${Math.random()*256})`
             row.appendChild(field);
             field.addEventListener("mouseover", (e) => {
-                e.target.style.opacity = e.target.style.opacity + 0.1
+                if (!e.target.style.opacity) tmp = 1
+                else tmp = Number(e.target.style.opacity)
+                e.target.style.opacity = tmp - 0.1
             })
         }
         grid.appendChild(row);
